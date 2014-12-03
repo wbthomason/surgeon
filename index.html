@@ -61,7 +61,7 @@ Wil Thomason
   <img src="pidgin.jpg" style="width:90%;"/>
 </td>
 ---
-<table><tr><td>
+.pull-left
 <pre><code>```
   void chat(int mode_val, char * message, ident * recipient) {
     switch(mode_val) {
@@ -80,8 +80,8 @@ Wil Thomason
     }
   }
 ```</code></pre>
-</td>
-<td>
+]
+.pull-right[
 <pre><code>```
       char * encode(char * buffer, int len) {
         char * ret = (char *)malloc(len * sizeof(char));
@@ -97,7 +97,8 @@ Wil Thomason
         char * enc_message = encode(message);
         send_raw_message(enc_message, recipient);
       }
-```</code></pre></td></tr></table>
+```</code></pre>
+]
 
 ---
 
