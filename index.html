@@ -64,7 +64,7 @@ Wil Thomason
 
 .pull-left[
 
-<pre><code>```
+<pre><code>
   void chat(int mode_val, char * message, ident * recipient) {
     switch(mode_val) {
       case UNENC_SINGLE:
@@ -81,12 +81,13 @@ Wil Thomason
         break;
     }
   }
-```</code></pre>
+</code></pre>
 ]
 
+---
 .pull-right[
 
-<pre><code>```
+<pre><code>
       char * encode(char * buffer, int len) {
         char * ret = (char *)malloc(len * sizeof(char));
         strcpy(ret, buffer);
@@ -101,7 +102,7 @@ Wil Thomason
         char * enc_message = encode(message);
         send_raw_message(enc_message, recipient);
       }
-```</code></pre>
+</code></pre>
 ]
 
 ---
