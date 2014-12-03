@@ -60,7 +60,7 @@ Wil Thomason
 <td>
   <img src="pidgin.jpg" style="width:90%;"/>
 </td>
-.pull-left[
+<table><tr><td>
 <pre><code>```
   void chat(int mode_val, char * message, ident * recipient) {
     switch(mode_val) {
@@ -79,8 +79,8 @@ Wil Thomason
     }
   }
 ```</code></pre>
-]
-.pull-right[
+</td>
+<td>
 <pre><code>```
       char * encode(char * buffer, int len) {
         char * ret = (char *)malloc(len * sizeof(char));
@@ -96,8 +96,8 @@ Wil Thomason
         char * enc_message = encode(message);
         send_raw_message(enc_message, recipient);
       }
-```</code></pre>
-]
+```</code></pre></td></tr></table>
+
 ---
 
 # why? - motivation
