@@ -115,8 +115,10 @@ class: center, middle
     </textarea>
     <script src="//gnab.github.io/remark/downloads/remark-latest.min.js">
     </script>
+    <script src="remark.language.js" type="text/javascript"></script>
     <script>
-      var slideshow = remark.create();
+      var slideshow = remark.create({highlightStyle: 'monokai',
+          highlightLanguage: 'remark'});
     </script>
   </body>
 </html>
