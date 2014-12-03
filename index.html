@@ -61,7 +61,9 @@ Wil Thomason
   <img src="pidgin.jpg" style="width:90%;"/>
 </td>
 ---
-.pull-left
+
+.pull-left[
+
 <pre><code>```
   void chat(int mode_val, char * message, ident * recipient) {
     switch(mode_val) {
@@ -81,7 +83,9 @@ Wil Thomason
   }
 ```</code></pre>
 ]
+
 .pull-right[
+
 <pre><code>```
       char * encode(char * buffer, int len) {
         char * ret = (char *)malloc(len * sizeof(char));
@@ -105,11 +109,18 @@ Wil Thomason
 # why? - motivation
 .big[
 - Software maintenance is a pain
+- Adding features is expensive
+- Plenty of potential for reuse
 ]
 ---
 
 # why? - current state of the art
-
+.big[
+- Manual
+  - Implement from scratch
+  - Copypasta code
+]
+<img src="http://cdn2.norecipes.com/wp-content/uploads/2012/10/spaghetti-recipe-5.jpg?c02f1c" style="float:right"/>
 ---
 
 # how? - general process
