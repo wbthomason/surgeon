@@ -12,6 +12,22 @@
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
       .big { font-size: 48px; }
+       code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
     </style>
   </head>
   <body>
@@ -44,7 +60,7 @@ Wil Thomason
 <td>
   <img src="pidgin.jpg" style="width:90%;"/>
 </td>
-<table><tr><td>
+.pull-left[
 <pre><code>```
   void chat(int mode_val, char * message, ident * recipient) {
     switch(mode_val) {
@@ -62,9 +78,10 @@ Wil Thomason
         break;
     }
   }
-```</code></pre></td>
-<td>
-  <pre><code>```
+```</code></pre>
+]
+.pull-right[
+<pre><code>```
       char * encode(char * buffer, int len) {
         char * ret = (char *)malloc(len * sizeof(char));
         strcpy(ret, buffer);
@@ -79,10 +96,8 @@ Wil Thomason
         char * enc_message = encode(message);
         send_raw_message(enc_message, recipient);
       }
-    ```</code></pre>
-</td>
-</tr>
-</table>
+```</code></pre>
+]
 ---
 
 # why? - motivation
