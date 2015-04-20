@@ -93,13 +93,13 @@ class: center, middle
 
 ---
 
-# how? - localization
+# how? - organ localization
 .big[
-- Genprog is good at localizing faults
-- Use test cases for functionality isolation
-  - One suite for regression
-  - One suite for localization
-- Problem: Common state
+- Need to find code responsible for functionality
+- Use same test suite for donor and recipient
+- Find code in donor used only in cases failed by recipient
+- Dependency analysis
+- Repackage into standalone C file & header
 ]
 ---
 
