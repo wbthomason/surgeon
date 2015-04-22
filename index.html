@@ -62,19 +62,20 @@ class: center, middle
 
 # why? - motivation
 .big[
-- Software maintenance is a pain
+- Software maintenance is expensive
+    - Estimated to be 75% of the lifetime cost of software
 - Adding features is expensive
-- Plenty of potential for reuse
+    - Estimated to be 41.25% of the lifetime cost of software
+- If we can automate some percentage of software enhancements, this saves companies significant money
 ]
 ---
 
 # why? - current state of the art
 .big[
 - Manual
-  - Implement from scratch
-  - Copypasta code
+  - Most feature implementations are written from scratch
+  - If code from another related project is used, it requires a human developer copying and pasting the source
 ]
-<img src="http://cdn2.norecipes.com/wp-content/uploads/2012/10/spaghetti-recipe-5.jpg?c02f1c" style="float:right; width: 50%"/>
 ---
 
 # how? - general process
@@ -97,30 +98,34 @@ class: center, middle
 .big[
 - Need to find code responsible for functionality
 - Use same test suite for donor and recipient
-- Find code in donor used only in cases failed by recipient
+- Find code in donor used in cases failed by recipient
 - Dependency analysis
+    - Uses CIL global dependency checking
 - Repackage into standalone C file & header
+    - Makes transplant easier
 ]
 ---
 
-# how? - targeting
+# how? - transplant site localization
 .big[
-- Genprog can try mutants, but this might be slow
-- Can we improve localization?
-  - Automatic copypasta
-  - Annotations
-  - Documentation mining (e.g. "TODO")
+- Currently using uniform localization
+    - Problem with standard Genprog fault localizationbeing that it can't find what isn't there
+- Considering slicing, etc. as alternatives
+    - Not yet tested
+- Semi-island GP approach
+    - Try multiple sites independently, merge random pairings
 ]
 ---
 
 # how? - translation
 .big[
-- Variable renaming
-- Variable creation
-  - When to create, and when to rename?
-  - AST similarity
-- Conform to recipient's API
-- Resolve dependencies
+- Custom mutation operator
+    - Assume all data necessary are passed in
+    - Section to initialize variables for parameters
+    - Call to extracted function
+    - Section to give return value back to recipient code
+- Match to data in recipient based off of type
+- Perform smoothing using standard Genprog mutations
 ]
 ---
 
@@ -143,11 +148,6 @@ class: center, middle
       }
 </code></pre>
 
----
-
-# who?
-
-<img src="https://rockhall.com/media/assets/inductees/default/the-who.jpg" style="width:60%; float:right"/>
 ---
 
 # conclusion
