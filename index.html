@@ -138,8 +138,13 @@ Each of these proposals has significant shortcomings (mostly manual, just a posi
 - Need to find code responsible for functionality
 - Use same test suite for donor and recipient
 - Find code in donor used in cases failed by recipient
+]
+---
+
+# how? - organ extraction
+.big[
 - Dependency analysis
-    - Uses CIL global dependency checking
+    - Similar to CIL's global dependency analysis
 - Repackage into standalone C file & header
     - Makes transplant easier
 ]
@@ -148,7 +153,7 @@ Each of these proposals has significant shortcomings (mostly manual, just a posi
 # how? - transplant site localization
 .big[
 - Currently using uniform localization
-    - Problem with standard Genprog fault localizationbeing that it can't find what isn't there
+    - Problem with standard Genprog fault localization being that it can't find what isn't there
 - Considering slicing, etc. as alternatives
     - Not yet tested
 - Semi-island GP approach
