@@ -5,9 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu|Arimo|Muli|Cabin+Condensed|Voltaire' rel='stylesheet' type='text/css'>
     <style type="text/css">
-      body { font-family: 'Arimo'; }
+      body { font-family: 'Arial'; }
       h1, h2, h3 {
-        font-family: 'Voltaire';
+        font-family: 'Arial';
         font-weight: normal;
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
@@ -158,6 +158,8 @@ Each of these proposals has significant shortcomings (mostly manual, just a posi
     - Not yet tested
 - Semi-island GP approach
     - Try multiple sites independently, merge random pairings
+- Search space:
+    - `$$n$$` sites for each of `$$m$$` candidate calls
 ]
 ---
 
@@ -209,6 +211,7 @@ class: center, middle
 
     </textarea>
     <script src="//gnab.github.io/remark/downloads/remark-latest.min.js">
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
     </script>
     <script type="text/javascript">
       var hljs = remark.highlighter.engine;
@@ -219,6 +222,19 @@ class: center, middle
           highlightStyle: 'monokai',
           highlightLanguage: 'remark'
         }) ;
+
+MathJax.Hub.Config({
+              tex2jax: {
+                            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+                                          }
+                             });
+      MathJax.Hub.Queue(function() {
+                    $(MathJax.Hub.getAllJax()).map(function(index, elem) {
+                                      return(elem.SourceElement());
+                                                }).parent().addClass('has-jax');
+                          });
+
+      MathJax.Hub.Configured();
     </script>
   </body>
 </html>
