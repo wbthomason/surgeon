@@ -178,6 +178,23 @@ Each of these proposals has significant shortcomings (mostly manual, just a posi
 <br/><br/><br/>
 
 <pre><code>
+    void message(char * message, ident * recipient, int type) {
+        switch(type) {
+            case UNENCRYPTED:
+                send_message(message, recipient);
+                break;
+            case ENCRYPTED:
+                // TODO
+                break;
+            }
+    }
+</code></pre>
+
+---
+
+<br/><br/><br/>
+
+<pre><code>
       char * encode(char * buffer, int len) {
         char * ret = (char *)malloc(len * sizeof(char));
         strcpy(ret, buffer);
@@ -196,6 +213,25 @@ Each of these proposals has significant shortcomings (mostly manual, just a posi
 
 ---
 
+<br/><br/><br/>
+
+<pre><code>
+    void message(char * message, ident * recipient, int type) {
+        switch(type) {
+            case UNENCRYPTED:
+                send_message(message, recipient);
+                break;
+            case ENCRYPTED:
+                char * enc_message = message;
+                ident * enc_recipient = recipient;
+                send_encoded_message(enc_message, enc_recipient);
+                break;
+            }
+    }
+</code></pre>
+
+---
+
 # preliminary results - benchmarks
 .big[
 - Tiered structure 
@@ -204,10 +240,19 @@ Each of these proposals has significant shortcomings (mostly manual, just a posi
     - Toy stack-based calculator variants
 - Tier II:
     - Student programs, more realistic
-    - Selection of intro class student submissions
+    - Selection of intro class student submissions & topological sort programs
 - Tier III:
     - Real-world applicability
     - Pidgin and SSL implementations
+---
+
+# preliminary results - overview
+.big[
+- Tier I: 9/9 transplants succeed
+- Tier II: ~60% of transplants succeed
+    - Problem that transplants in this context are often closer to repairs
+- Tier III: In progress
+    - No successes yet - search space with uniform localization appears to be too large
 ---
 
 # conclusion
